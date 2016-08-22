@@ -18,7 +18,7 @@ according to your preferences.
 ## Table of contents
 
 ### Formatting
-* [4 Spaces for indentation](#2-spaces-for-indentation)
+* [4 Spaces for indentation](#4-spaces-for-indentation)
 * [Newlines](#newlines)
 * [No trailing whitespace](#no-trailing-whitespace)
 * [Use Semicolons](#use-semicolons)
@@ -434,29 +434,11 @@ setTimeout(function() {
 
 One method per line should be used if you want to chain methods.
 
-You should also indent these methods so it's easier to tell they are part of the same chain.
-
-*Right:*
-
-```js
-User
-  .findOne({ name: 'foo' })
-  .populate('bar')
-  .exec(function(err, user) {
-    return true;
-  });
-````
+Do not ident.
 
 *Wrong:*
 
 ```js
-User
-.findOne({ name: 'foo' })
-.populate('bar')
-.exec(function(err, user) {
-  return true;
-});
-
 User.findOne({ name: 'foo' })
   .populate('bar')
   .exec(function(err, user) {
@@ -469,6 +451,17 @@ User.findOne({ name: 'foo' }).populate('bar')
 });
 
 User.findOne({ name: 'foo' }).populate('bar')
+  .exec(function(err, user) {
+    return true;
+  });
+````
+
+*Wrong:*
+
+```js
+User
+  .findOne({ name: 'foo' })
+  .populate('bar')
   .exec(function(err, user) {
     return true;
   });
