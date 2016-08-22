@@ -456,15 +456,14 @@ User.findOne({ name: 'foo' }).populate('bar')
   });
 ````
 
-*Wrong:*
+*Right:*
 
 ```js
-User
-  .findOne({ name: 'foo' })
-  .populate('bar')
-  .exec(function(err, user) {
-    return true;
-  });
+User.findOne({ name: 'foo' })
+.populate('bar')
+.exec(function(err, user) {
+  return true;
+});
 ````
 
 ## Comments
